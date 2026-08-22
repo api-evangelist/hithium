@@ -1,17 +1,48 @@
 aid: hithium
 name: Hithium
-description: 'Hithium is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  HiTHIUM (Xiamen Hithium Energy Storage Technology Co., Ltd.) is a Chinese energy storage
+  company founded in 2019 that designs and manufactures lithium iron phosphate (LFP) cells,
+  modules and complete battery energy storage systems (BESS) for utility-scale, commercial and
+  industrial, and residential applications. The product line runs from large-format prismatic
+  ESS cells through liquid-cooled multi-megawatt-hour container systems to the HeroEE
+  residential and portable range marketed at hero-ee.com. Company material reports roughly
+  8,000 staff, more than 1,100 R&D engineers and over 3,900 patents. Product pages publish
+  named certifications including UL 1973, UL 9540, UL 9540A, NFPA 855, IEC 62619, IEC 62477,
+  IEC 63056, IEC 61000 and UN 38.3. HiTHIUM operates a Product Security Incident Response Team
+  (PSIRT) running an IEC 62443-aligned vulnerability management process, and publishes numbered
+  cybersecurity bulletins with CVE references and remediation guidance at
+  hithium.com/support/security.html. HiTHIUM publishes no developer portal, no API reference,
+  no OpenAPI, AsyncAPI, GraphQL or Postman contract, no SDKs, no CLI, no webhook catalog and no
+  MCP or A2A agent surface; third-party integration happens over Modbus/CAN interfaces
+  described in datasheets and manuals that sit behind the download-center account gate, and the
+  HeroEE consumer app's backend is undocumented.
+image: https://www.hithium.com/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/hithium/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
-specificationVersion: '0.20'
+x-tier: no-public-api
+x-tier-reason: >-
+  Enriched 2026-08-22 with full STEP 0b contract discovery. www.hithium.com and en.hithium.com
+  404 on /openapi.json, /swagger.json, /llms.txt and every /.well-known/* path; api., developer.,
+  dev., docs., cloud., open., openapi., iot., ems., portal. and app..hithium.com do not resolve;
+  hero-ee.com is a Next.js locale catch-all that answers 200 with the same 504KB HTML shell for
+  /openapi.json and /llms.txt (soft-200, not a document); there is no GitHub organization and the
+  github.com/hithium user account holds zero repositories. The only machine-adjacent surface found
+  is the site's own internal CMS AJAX (www.hithium.com/ajax/seculist), which is not a published API.
+specificationVersion: '0.23'
 created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
+- Energy Storage
+- Battery
+- Lithium Iron Phosphate
+- Renewable Energy
+- Utilities
+- Manufacturing
+- Hardware
+- Industrial Control Systems
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +50,62 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/hithium-domain-security.yml
 - type: Website
+  url: https://www.hithium.com/
+- type: Support
+  url: https://www.hithium.com/support/services.html
+- type: PrivacyPolicy
+  url: https://www.hithium.com/privacy.html
+- type: Blog
+  url: https://www.hithium.com/about/IndustryNews.html
+- type: Security
+  url: https://www.hithium.com/support/security.html
+- type: Compliance
+  url: https://www.hithium.com/about/anti_corruption.html
+- type: VulnerabilityDisclosure
+  url: security/hithium-vulnerability-disclosure.yml
+- type: Conformance
+  url: conformance/hithium-conformance.yml
+- type: LLMsTxt
+  url: llms/hithium-llms.txt
+- type: Plans
+  url: plans/hithium-plans-pricing.yml
+- type: SecondaryMarketListing
   url: https://www.hiive.com/securities/hithium-stock
+x-enrichment:
+  date: '2026-08-22'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    HiTHIUM sells battery cells and containerised storage systems, not software: there is no
+    developer surface anywhere on its estate - eleven candidate API/docs subdomains of hithium.com
+    fail to resolve, every /.well-known/* path 404s on all three live hosts, the HeroEE brand site
+    answers 200 with the same Next.js HTML shell for /openapi.json and /llms.txt (a soft-200, not a
+    document), there is no GitHub organisation, and the only integration documentation that exists
+    - the Modbus/CAN datasheets and manuals - sits behind the download centre's
+    "Please login to download this datasheet" account gate.
+  evidence:
+  - url: https://www.hithium.com/openapi.json
+    status: 404
+  - url: https://www.hithium.com/llms.txt
+    status: 404
+  - url: https://www.hithium.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.hithium.com/.well-known/api-catalog
+    status: 404
+  - url: https://en.hithium.com/.well-known/security.txt
+    status: 404
+  - url: https://www.hero-ee.com/openapi.json
+    status: 200
+  - url: https://www.hero-ee.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.hithium.com/support/download_center.html
+    status: 200
+  - url: https://www.hithium.com/support/security.html
+    status: 200

@@ -1,0 +1,36 @@
+generated: '2026-08-22'
+method: probed
+source: live DNS/TLS/HTTP probes of every HiTHIUM-controlled host (no API hosts exist)
+hosts:
+- host: www.hithium.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Oct  2 23:59:59 2026 GMT
+  hsts: null
+- host: en.hithium.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Oct  2 23:59:59 2026 GMT
+  hsts: null
+- host: www.hero-ee.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan 10 10:02:23 2027 GMT
+  hsts: max-age=31536000; includeSubDomains; preload
+domains:
+- domain: hithium.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: hero-ee.com
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+  dmarc_policy: null
+note: www.hithium.com and en.hithium.com serve TLS 1.2 with no HSTS header; the HeroEE brand site www.hero-ee.com
+  serves TLS 1.3 with a full HSTS preload directive. Neither registrable domain is DNSSEC-signed and neither
+  publishes a CAA record. hithium.com publishes SPF and a DMARC record at p=quarantine; hero-ee.com publishes
+  neither, so its domain can be spoofed in email. No API hosts exist to probe.

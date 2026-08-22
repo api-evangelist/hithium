@@ -1,0 +1,19 @@
+generated: '2026-08-22'
+method: searched
+source: https://www.hithium.com/ (full sitemap walk) + https://www.hero-ee.com/sitemap.xml
+plan_count: 0
+plans: []
+note: >-
+  HiTHIUM publishes no pricing, plans, tiers, quotas or rate card of any kind. It sells battery
+  cells, modules and containerised energy-storage systems through a quote-and-contract motion: the
+  only commercial call to action on the corporate site is a "Get Quote" / "Request Brochure"
+  enquiry form posting to www.hithium.com/feedback/sendpost.html. The 659-URL hero-ee.com sitemap
+  carries product, FAQ, manual and policy pages but no pricing page, and the residential HeroEE
+  range is sold through regional dealers. There is no API and therefore no API pricing.
+evidence:
+- url: https://www.hithium.com/sitemap.xml
+  status: 200
+  observed: 176 URLs across newsroom/solutions/products/ir/innovations/about/support - no pricing or plans page
+- url: https://www.hero-ee.com/sitemap.xml
+  status: 200
+  observed: 659 URLs (60 locales x 11 pages) - no pricing page in any locale

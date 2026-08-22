@@ -1,0 +1,73 @@
+generated: '2026-08-22'
+method: searched
+source: https://www.hithium.com/products/system.html + https://www.hithium.com/support/security.html
+note: >-
+  HiTHIUM publishes no machine-readable API contract, so every API/interface standard below is
+  recorded as not conformant on the evidence of absence rather than on a failed check. The
+  standards HiTHIUM does assert are product-safety and industrial-control-security standards,
+  which the Kin Score does not read as API conformance - they are captured here because they are
+  real, published, and are the correct regime signals for an energy-storage manufacturer.
+conformance:
+- id: openapi
+  conforms: false
+  evidence: >-
+    /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs, /docs and /redoc all
+    404 on www.hithium.com and en.hithium.com; www.hero-ee.com answers 200 with a Next.js HTML
+    shell for the same paths (soft-200, not a spec).
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is published on any HiTHIUM host.
+- id: graphql
+  conforms: false
+  evidence: No /graphql endpoint exists on any resolving HiTHIUM host.
+- id: mcp
+  conforms: false
+  evidence: No hosted MCP endpoint, no npm/PyPI MCP package, no /.well-known/mcp.json (404 on all hosts).
+- id: a2a
+  conforms: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json return 404 on www.hithium.com, en.hithium.com and www.hero-ee.com.
+- id: oauth2
+  conforms: false
+  evidence: /.well-known/oauth-authorization-server and /.well-known/openid-configuration return 404 on all hosts.
+- id: rfc9457
+  conforms: false
+  evidence: No API, therefore no problem+json error envelope to assess.
+- id: rfc9116
+  conforms: false
+  evidence: >-
+    A vulnerability-disclosure programme exists and is published at
+    https://www.hithium.com/support/security.html, but /.well-known/security.txt returns 404, so the
+    RFC 9116 discovery contract is not satisfied.
+- id: iec-62443
+  conforms: claimed
+  domain_standard: true
+  evidence: >-
+    https://www.hithium.com/support/security.html states verbatim that "In accordance with the IEC
+    62443 series of standards, Hithium has established a robust vulnerability management process",
+    operated by a named PSIRT with a published contact and two numbered advisories. This is a
+    published process claim on the vendor's own page, NOT a certificate and NOT a contract-level
+    signature, so it is recorded as `claimed` rather than `true`.
+product_certifications:
+  note: >-
+    Certifications named on HiTHIUM's own utility-system product page. These are hardware and
+    system safety certifications, not API or information-security certifications, and no SOC 2,
+    ISO 27001, PCI DSS, HIPAA or FedRAMP claim was found anywhere on the site.
+  source: https://www.hithium.com/products/system.html
+  certifications:
+  - UL 1973
+  - UL 9540
+  - UL 9540A
+  - NFPA 855
+  - IEC 62619
+  - IEC 62477
+  - IEC 63056
+  - IEC 61000
+  - UN 38.3
+compliance_program:
+  published: true
+  url: https://www.hithium.com/about/anti_corruption.html
+  label: Compliance & Integrity
+  esg_reporting: >-
+    ESG, supply-chain due-diligence, responsible-minerals and climate/nature disclosure reports are
+    listed in the download centre, but each requires an account ("Please login to download this
+    datasheet"), so the documents themselves were not retrieved.
