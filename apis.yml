@@ -17,6 +17,17 @@ description: >-
   MCP or A2A agent surface; third-party integration happens over Modbus/CAN interfaces
   described in datasheets and manuals that sit behind the download-center account gate, and the
   HeroEE consumer app's backend is undocumented.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.hithium.com/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/hithium/refs/heads/main/apis.yml
 x-type: company
